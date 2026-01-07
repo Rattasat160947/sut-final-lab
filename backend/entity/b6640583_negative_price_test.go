@@ -20,3 +20,4 @@ func TestPrice(t *testing.T){
 		g.Expect(err.Error()).To(Equal("Price must be between 50 and 5000"))
 	})
 }
+// issue2 check
