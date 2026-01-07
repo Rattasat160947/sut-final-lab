@@ -8,7 +8,7 @@ import (
 
 func TestCode(t *testing.T){
 	g := NewGomegaWithT(t)
-	t.Run(`Code invalid format` , func(t *testing.T){
+	t.Run(`Code must start with BK followed by 6 digits (0-9)` , func(t *testing.T){
 		books := Books{
 			Title :"SUT",
 			Price :500,
@@ -17,6 +17,6 @@ func TestCode(t *testing.T){
 		ok, err := govalidator.ValidateStruct(books)
 		g.Expect(ok).NotTo(BeTrue())
 		g.Expect(err).NotTo(BeNil())
-		g.Expect(err.Error()).To(Equal("Code invalid format"))
+		g.Expect(err.Error()).To(Equal("Code must start with BK followed by 6 digits (0-9)"))
 	})
 }
